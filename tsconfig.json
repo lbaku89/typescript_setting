@@ -1,0 +1,24 @@
+{
+    "compilerOptions":{
+        "allowJs": true,
+        // ts compile시 js file이 있을 시 js도 그대로 쓰겠다는 옵션
+        "target":"ES6",
+        // ts -> js로 변환시 js es6문법 사용
+        "outDir": "built",
+        // ts -> js로 변환된 결과물이 어디에 생성될 지 경로 지정 
+        "moduleResolution": "Node",
+        // moduleResolution 은 가장 typescript community에서 흔히 사용되는 resolution
+        // default 값인 node 이며 , classic 이라는 옵션도 존재 
+        "lib": ["ES2015","DOM","DOM.Iterable"],
+        // 타입스크립트 파일을 자바스크립트로 컴파일 할 때 포함될 라이브러리
+        // Promise를 사용하기 위해서 ES2015이상의 library 사용 필요  
+        "noImplicitAny": true,
+        // true 로 할 시 type이 정해지지 않았을 때 error 표기
+    },
+    "include": ["src/**/*"],
+    // src 하위 폴더의 file만 compile 하겠다
+    // 다른 예시) src폴더 하위 .ts파일만 compile하겠다.
+    "exclude": ["node_modules","bower_components","jspm_packages","outDir"]
+    // compile 제외할 폴더 설정 
+    // 명시하지 않으면 default 값은 node_modules,bower_components,jspm_packages,outDir 이다
+} 
